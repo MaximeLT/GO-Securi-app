@@ -38,8 +38,10 @@ import org.opencv.videoio.VideoCapture;
 public class FaceDetection extends JFrame {
 
 	/**
-	 * 
+	 * TODO : trouver un moyen de convertir Rect en Mat 
 	 */
+	public int i = 0;
+	
 	private static final long serialVersionUID = 1L;
 	public Rect recordImg;
 	private JPanel contentPane;
@@ -56,7 +58,7 @@ public class FaceDetection extends JFrame {
 			FaceDetection.class.getResource("haarcascade_eye_tree_eyeglasses.xml").getPath().substring(1));
 
 	MatOfRect faceDetections = new MatOfRect();
-	static ImageIcon icon = new ImageIcon("D:\\Users\\mfevrier\\eclipse-workspace\\mspr_java\\img\\iconapp.png");
+	static ImageIcon icon = new ImageIcon("mspr_java\\img\\iconapp.png");
 
 ///
 	class DaemonThread implements Runnable {
@@ -146,7 +148,7 @@ public class FaceDetection extends JFrame {
 	public FaceDetection() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		setBounds(100, 100, 656, 514);
+		setBounds(100, 100, 911, 643);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -199,9 +201,16 @@ public class FaceDetection extends JFrame {
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				i++;
+				/*
+				 * Rect to Mat ??? 
+				 * Currently save all the frame.
+				 * */
 				// Mat recordimg = recordImg;
 				// Imgcodecs.imwrite("img/imgserver/personne1.png", recordImg);
-				JOptionPane.showMessageDialog(null, "object save !", "VERY NICE !", ERROR);
+				System.out.println("save picture x" + i);
+				Imgcodecs.imwrite("img/imgserver/myface.png", frame);
+				
 			}
 		});
 		contentPane.add(btnLogin, BorderLayout.SOUTH);
