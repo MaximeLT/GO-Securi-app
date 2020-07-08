@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 
 import javax.swing.JTextField;
 import javax.swing.text.html.ImageView;
@@ -22,12 +23,15 @@ import org.opencv.imgcodecs.Imgcodecs;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComponent;
+
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
+import java.awt.CardLayout;
 
 public class StoreItems {
 
@@ -38,6 +42,7 @@ public class StoreItems {
 	private JPanel panel_1;
 	private Mat matrix = null;
 	private JPanel panel_2;
+	private JPanel panel_3;
 
 	/**
 	 * Launch the application.
@@ -68,13 +73,16 @@ public class StoreItems {
 	 * @throws IOException 
 	 */
 	private void initialize() throws IOException {
+
 		frame = new JFrame();
 		frame.setBounds(100, 100, 651, 346);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel panel = new JPanel();
+		
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
+		panel.getRootPane().add(new JpanelOpenCv());
 		
 		textFieldId = new JTextField("admin");
 		textFieldId.setBounds(417, 180, 86, 20);
@@ -102,6 +110,8 @@ public class StoreItems {
 		JLabel lblNewLabel = new JLabel(image);
 		lblNewLabel.setBounds(371, 11, 254, 135);
 		panel.add(lblNewLabel);
+
+	
 	
 		
 		getCamera();

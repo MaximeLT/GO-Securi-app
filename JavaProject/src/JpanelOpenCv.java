@@ -14,23 +14,29 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import org.eclipse.ui.OpenAndLinkWithEditorHelper;
 import org.opencv.core.*;   
+import org.opencv.highgui.*;
 import org.opencv.videoio.VideoCapture;      
 
 public class JpanelOpenCv extends JPanel{
 
     BufferedImage image;
-
+    static VideoCapture camera;
+    static {System.loadLibrary(Core.NATIVE_LIBRARY_NAME); }
     public static void main (String args[]) throws InterruptedException{
-        System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+  
 
+       
         JpanelOpenCv t = new JpanelOpenCv();
 
-        VideoCapture camera = new VideoCapture(0);
-        
+        camera = new VideoCapture();
+        camera.open(0);
+    	
         Mat frame = new Mat();
+        
         camera.read(frame); 
-
+        
         if(!camera.isOpened()){
             System.out.println("Error");
         }
@@ -38,7 +44,7 @@ public class JpanelOpenCv extends JPanel{
             while(true){        
 
                 if (camera.read(frame)){
-
+                	
                     BufferedImage image = t.MatToBufferedImage(frame);
 
                     t.window(image, "Original Image", 0, 0);
