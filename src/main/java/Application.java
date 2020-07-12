@@ -13,24 +13,31 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class Application extends javax.swing.JFrame {
-    int count = 0;
-    VideoCapture webSource = null;
-    Mat frame = new Mat();
-    MatOfByte mem = new MatOfByte();
-    CascadeClassifier faceDetector = new CascadeClassifier(Application.class.getResource("haarcascade_frontalface_alt.xml").getPath().substring(1).replaceAll("%20", " "));
-    MatOfRect faceDetections = new MatOfRect();
-    private DaemonThread myThread = null;
+
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
     private JTextField txtLogin;
     private JTextField txtMotDePasse;
+    private DaemonThread myThread = null;
+
+    Path CascadePath = FileSystems.getDefault().getPath("src", "main", "resources", "haarcascade_frontalface_alt.xml");
+
+    Mat frame = new Mat();
+    MatOfByte mem = new MatOfByte();
+    MatOfRect faceDetections = new MatOfRect();
+
+    VideoCapture webSource = null;
+    CascadeClassifier faceDetector = new CascadeClassifier(CascadePath.toString());
 
     public Application() {
         initComponents();
-        System.out.println(Application.class.getResource("haarcascade_frontalface_alt.xml").getPath().substring(1));
+        System.out.println(CascadePath.toString());
     }
 
     public static void main(String args[]) {
