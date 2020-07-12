@@ -1,5 +1,0 @@
-yo : yotest
-mec : mectest
-sava : cavatestyo : yotest
-mec : mectest
-sava : cavatestzefges
