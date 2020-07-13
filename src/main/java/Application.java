@@ -10,11 +10,16 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
+
 import java.io.ByteArrayInputStream;
+
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
+
+import com.google.firebase.database.*;
 
 public class Application extends javax.swing.JFrame {
 
@@ -57,6 +62,9 @@ public class Application extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Application.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+
+        new ShowDbChanges();
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Application().setVisible(true);
