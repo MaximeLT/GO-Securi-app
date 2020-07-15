@@ -177,6 +177,7 @@ public class Application extends javax.swing.JFrame {
         jPanel1.add(labelStart);
 
         jButton1.setText("D\u00E9marrer la webcam");
+        jButton1.setBackground(new Color(55, 158, 193));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -184,6 +185,7 @@ public class Application extends javax.swing.JFrame {
         });
 
         jButton2.setText("Arr\u00EAter la webcam");
+        jButton2.setBackground(new Color(55, 158, 193));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -199,6 +201,7 @@ public class Application extends javax.swing.JFrame {
         txtMotDePasse.setColumns(10);
 
         jButton3.setText("Se connecter");
+        jButton3.setBackground(new Color(55, 158, 193));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RecuperationPhotoFirebase(evt);
@@ -344,9 +347,16 @@ public class Application extends javax.swing.JFrame {
         }
     }
 
-    public class Dashboard {
-        private JFrame frame;
 
+
+
+
+    /*public void showWindow() throws IOException {
+        new Dashboard();
+    }*/
+
+    public static class Dashboard {
+        private static JFrame frame;
         /**
          * Create the application.
          * @throws IOException
@@ -359,7 +369,7 @@ public class Application extends javax.swing.JFrame {
          * Initialize the contents of the frame.
          * @throws IOException
          */
-        private void initialize() throws IOException {
+        static private void initialize() throws IOException {
 
             frame = new JFrame();
             frame.setBounds(100, 100, 705, 533);
@@ -374,8 +384,16 @@ public class Application extends javax.swing.JFrame {
             btnIdentify.setOpaque(true);
             btnIdentify.setBounds(10, 11, 133, 45);
             panel.add(btnIdentify);
+            btnIdentify.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    frame.dispose();
+                    new Application().setVisible(true);
+                }
+            });
 
-            JLabel lblNewLabel = new JLabel("Image de l'utilisateur");
+
+
+            JLabel lblNewLabel = new JLabel(new ImageIcon("D:\\database_opencv\\me.png"));
             lblNewLabel.setBackground(new Color(55, 158, 193));
             lblNewLabel.setOpaque(true);
             lblNewLabel.setBounds(479, 11, 200, 202);
@@ -408,6 +426,9 @@ public class Application extends javax.swing.JFrame {
             JCheckBox chckbxGilet = new JCheckBox("Gilet pare balle");
             chckbxGilet.setBounds(223, 437, 185, 23);
             panel.add(chckbxGilet);
+
+            frame.setVisible(true);
+
         }
     }
 

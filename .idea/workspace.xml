@@ -28,10 +28,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7b0fb508-3536-45a9-b1a8-f6dfdd69d380" name="Default Changelist" comment="Connexion à FireBase">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FireBaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FireBaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ShowDbChanges.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ShowDbChanges.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Application$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Application$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Application$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application$3.class" afterDir="false" />
@@ -39,7 +37,6 @@
       <change beforePath="$PROJECT_DIR$/target/classes/Application$DaemonThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application$DaemonThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/FireBaseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FireBaseService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ShowDbChanges$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ShowDbChanges.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ShowDbChanges.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +77,7 @@
       <recent name="C:\Users\Yanuka\Desktop\Projets Java\MSPR Java\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="JAR Application.GO-Securi-app-1.0-SNAPSHOT.jar">
+  <component name="RunManager" selected="Application.Application">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Application" />
       <module name="GO-Securi-app" />
@@ -94,8 +91,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JAR Application.GO-Securi-app-1.0-SNAPSHOT.jar" />
         <item itemvalue="Application.Application" />
+        <item itemvalue="JAR Application.GO-Securi-app-1.0-SNAPSHOT.jar" />
       </list>
     </recent_temporary>
   </component>
@@ -124,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594769597270</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="On continue">
+      <created>1594838066990</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1594838066990</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -154,7 +158,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Connexion à FireBase" />
     <MESSAGE value="Reconnaissance visage en local pour le moment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reconnaissance visage en local pour le moment" />
+    <MESSAGE value="On continue" />
+    <option name="LAST_COMMIT_MESSAGE" value="On continue" />
   </component>
   <component name="WindowStateProjectService">
     <state x="977" y="319" key="#Application" timestamp="1594590084558">
@@ -173,30 +178,34 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="986" y="441" key="FileChooserDialogImpl/0.0.2560.1400/-1440.364.1440.860@0.0.2560.1400" timestamp="1594769157579" />
-    <state width="2517" height="130" key="GridCell.Tab.0.bottom" timestamp="1594837859890">
+    <state width="2517" height="130" key="GridCell.Tab.0.bottom" timestamp="1594842975135">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="130" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1440.364.1440.860@0.0.2560.1400" timestamp="1594837859890" />
-    <state width="2517" height="130" key="GridCell.Tab.0.center" timestamp="1594837859889">
+    <state width="2517" height="130" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1440.364.1440.860@0.0.2560.1400" timestamp="1594842975135" />
+    <state width="2517" height="130" key="GridCell.Tab.0.center" timestamp="1594842975135">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="130" key="GridCell.Tab.0.center/0.0.2560.1400/-1440.364.1440.860@0.0.2560.1400" timestamp="1594837859889" />
-    <state width="2517" height="130" key="GridCell.Tab.0.left" timestamp="1594837859889">
+    <state width="2517" height="130" key="GridCell.Tab.0.center/0.0.2560.1400/-1440.364.1440.860@0.0.2560.1400" timestamp="1594842975135" />
+    <state width="2517" height="130" key="GridCell.Tab.0.left" timestamp="1594842975135">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="130" key="GridCell.Tab.0.left/0.0.2560.1400/-1440.364.1440.860@0.0.2560.1400" timestamp="1594837859889" />
-    <state width="2517" height="130" key="GridCell.Tab.0.right" timestamp="1594837859889">
+    <state width="2517" height="130" key="GridCell.Tab.0.left/0.0.2560.1400/-1440.364.1440.860@0.0.2560.1400" timestamp="1594842975135" />
+    <state width="2517" height="130" key="GridCell.Tab.0.right" timestamp="1594842975135">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="130" key="GridCell.Tab.0.right/0.0.2560.1400/-1440.364.1440.860@0.0.2560.1400" timestamp="1594837859889" />
+    <state width="2517" height="130" key="GridCell.Tab.0.right/0.0.2560.1400/-1440.364.1440.860@0.0.2560.1400" timestamp="1594842975135" />
     <state x="1172" y="97" key="SettingsEditor" timestamp="1594765513027">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1172" y="97" key="SettingsEditor/0.0.2560.1400/-1440.364.1440.860@0.0.2560.1400" timestamp="1594765513027" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1594601532368">
+    <state width="582" height="446" key="SwitcherDM" timestamp="1594840440610">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1440.364.1440.860@0.0.2560.1400" timestamp="1594601532368" />
+    <state width="582" height="446" key="SwitcherDM/0.0.2560.1400/-1440.364.1440.860@0.0.2560.1400" timestamp="1594840440610" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1594838069164">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1440.364.1440.860@0.0.2560.1400" timestamp="1594838069164" />
     <state x="936" y="330" width="672" height="677" key="run.anything.popup" timestamp="1594765488005">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

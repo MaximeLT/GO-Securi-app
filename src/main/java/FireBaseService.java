@@ -86,4 +86,8 @@ public class FireBaseService {
         Files.write(new File("src/main/resources/com/epsiB3/mspr_java/images/detectedFaces/referenceFace.jpg").toPath(), imageBytesArray);
     }
     */
+
+    public void dlImage() throws IOException {
+
+    }
 }
