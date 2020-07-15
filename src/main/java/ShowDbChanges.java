@@ -14,8 +14,9 @@ public class ShowDbChanges extends Application implements Runnable {
             e.printStackTrace();
         }
 
-        DatabaseReference ref = fbs.getDb()
-                .getReference("/");
+
+        /*DatabaseReference ref = fbs.getDb();
+                //.getReference("/");
         ref.addValueEventListener(new ValueEventListener() {
 
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -28,7 +29,7 @@ public class ShowDbChanges extends Application implements Runnable {
                 System.out.print("Error: " + error.getMessage());
             }
         });
-
+*/
 
     }
 }
