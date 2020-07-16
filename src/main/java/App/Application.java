@@ -23,11 +23,14 @@ import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.util.Arrays;
+import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
 public class Application extends javax.swing.JFrame {
 
+    Employe employe1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -41,10 +44,11 @@ public class Application extends javax.swing.JFrame {
     private boolean image_1_load_status = false, image_2_load_status = false;
     private JLabel labelCamera = new JLabel("Lancez la webcam");
     private JLabel labelStart = new JLabel("Pour commencer la reconnaissance");
-    private FireBaseService db;
+    private static Firebase database;
 
     Path CascadePath = FileSystems.getDefault().getPath("src", "main", "resources", "haarcascade_frontalface_alt.xml");
     Path ResourcesPath = FileSystems.getDefault().getPath("src", "main", "resources");
+    Path ImagesTempPath = FileSystems.getDefault().getPath("src", "main", "resources", "imagesTemp");
     String GoSecuriLogoPath = (ResourcesPath.toString() + "\\LogoSecuri.png");
     String EpsiLogoPath = (ResourcesPath.toString() + "\\LogoEpsi.png");
 
@@ -63,8 +67,9 @@ public class Application extends javax.swing.JFrame {
         System.out.println(CascadePath.toString());
     }
 
-    public static void main(String args[]) {
+    public static void main(String args[]) throws IOException {
         nu.pattern.OpenCV.loadLocally();
+        database = new Firebase();
 
         /*
         try {
@@ -200,7 +205,15 @@ public class Application extends javax.swing.JFrame {
         jButton3.setBackground(new Color(55, 158, 193));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RecuperationPhotoFirebase(evt);
+                try {
+                    AjoutPhotoInFirebase(evt);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
                 try {
                     Thread.sleep(5000);
@@ -208,7 +221,11 @@ public class Application extends javax.swing.JFrame {
                     e.printStackTrace();
                 }
 
-                ComparaisonPhotos(evt);
+                try {
+                    ComparaisonPhotos(evt);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -273,18 +290,21 @@ public class Application extends javax.swing.JFrame {
 
     }
 
-    private void RecuperationPhotoFirebase(java.awt.event.ActionEvent evt) {
+    private void AjoutPhotoInFirebase(java.awt.event.ActionEvent evt) throws InterruptedException, ExecutionException, IOException {
         Mat crop = new Mat(frame, rectCrop);
-        Imgcodecs.imwrite("D:\\database_opencv\\me.png", crop);
+        Imgcodecs.imwrite((ImagesTempPath.toString() + "\\image1.png"), crop);
+        //database.ajoutImage(1);
+
     }
 
-    private void ComparaisonPhotos(java.awt.event.ActionEvent evt) {
+    private void ComparaisonPhotos(java.awt.event.ActionEvent evt) throws IOException {
         Mat crop = new Mat(frame, rectCrop);
-        Imgcodecs.imwrite("D:\\database_opencv\\me2.png", crop);
+        //database.getImage(employe1);
+        Imgcodecs.imwrite((ImagesTempPath.toString() + "\\image2.png"), crop);
 
         try {
 
-            image_2 = ImageIO.read(new File("D:\\database_opencv\\me2.png"));
+            image_2 = ImageIO.read(new File(ImagesTempPath.toString() + "\\image2.png"));
             image_2_load_status = true;
             image_2 = img_resize(image_2);//this method created under below as img_resize
 
@@ -293,7 +313,7 @@ public class Application extends javax.swing.JFrame {
         }
 
         try {
-            image_1 = ImageIO.read(new File("D:\\database_opencv\\me.png"));
+            image_1 = ImageIO.read(new File(ImagesTempPath.toString() + "\\image1.png"));
             image_1_load_status = true;
             image_1 = img_resize(image_1);//this method created under below as img_resize
 
@@ -341,6 +361,10 @@ public class Application extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, " Login Failed \n" + "Similarity : " + d + " %");
 
         }
+    }
+
+    public static Firebase getDb() {
+        return database;
     }
 
 

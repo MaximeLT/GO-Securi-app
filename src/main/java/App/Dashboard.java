@@ -3,9 +3,17 @@ package App;
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
+import java.util.concurrent.ExecutionException;
 
 public class Dashboard {
     private static JFrame frame;
+    private static Firebase database;
+    static Path ImagesTempPath = FileSystems.getDefault().getPath("src", "main", "resources", "imagesTemp");
+
+
+
     /**
      * Create the application.
      * @throws IOException
@@ -19,6 +27,7 @@ public class Dashboard {
      * @throws IOException
      */
     static private void initialize() throws IOException {
+
 
         frame = new JFrame();
         frame.setBounds(100, 100, 705, 533);
@@ -40,9 +49,27 @@ public class Dashboard {
             }
         });
 
+        JButton btnTakeGear = new JButton("Prendre le matériel");
+        btnTakeGear.setBackground(new Color(55, 158, 193));
+        btnTakeGear.setOpaque(true);
+        btnTakeGear.setBounds(10, 438, 133, 45);
+        panel.add(btnTakeGear);
+        btnTakeGear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                /*try {
+                    database.removeMateriel(1);
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }*/
+                frame.dispose();
+            }
+        });
 
 
-        JLabel lblNewLabel = new JLabel(new ImageIcon("D:\\database_opencv\\me.png"));
+
+        JLabel lblNewLabel = new JLabel(new ImageIcon(ImagesTempPath.toString() + "\\image2.png"));
         lblNewLabel.setBackground(new Color(55, 158, 193));
         lblNewLabel.setOpaque(true);
         lblNewLabel.setBounds(479, 11, 200, 202);
